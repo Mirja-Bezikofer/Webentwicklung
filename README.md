@@ -1,2 +1,2 @@
 # Webentwicklung
-Webentwicklung Gruppenarbeit für Gruppe 5
+Webentwicklung Gruppenarbeit für Gruppe 6
