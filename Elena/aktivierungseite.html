@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivierung deines Kontos</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 20px; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Aktivierung deines Kontos</h2>
+        <p>Bitte warte, während wir dein Konto aktivieren...</p>
+        <button onclick="activateAccount()">Aktiviere Konto</button>
+    </div>
+    <script>
+        function activateAccount() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email'); // E-Mail aus der URL holen
+            
+            if (email) {
+                fetch('activate.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        window.location.href = "login_registrierung.html";
+                    }
+                })
+                .catch(error => alert('Fehler: ' + error));
+            } else {
+                alert("Kein Aktivierungslink gefunden.");
+            }
+        }
+    </script>
+</body>
+</html>
