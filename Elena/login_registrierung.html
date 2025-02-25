@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registrierung</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input { width: 100%; padding: 8px; margin: 5px 0; }
+        button { width: 100%; padding: 8px; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Deine E-Mail" required>
+        <input type="password" id="login-password" placeholder="Dein Passwort" required>
+        <button onclick="login()">Login</button>
+        <p>Du hast noch kein Konto? <a href="#" onclick="showRegister()">Registriere dich hier.</a></p>
+    </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <h2>Registrierung</h2>
+        <input type="email" id="register-email" placeholder="Deine E-Mail" required>
+        <input type="password" id="register-password" placeholder="Dein Passwort" required>
+        <button onclick="register()">Registrieren</button>
+        <p>Du hast bereits ein Konto? <a href="#" onclick="showLogin()">Logge dich hier ein.</a></p>
+    </div>
+
+    <script>
+        function login() {
+            let email = document.getElementById('login-email').value;
+            let password = document.getElementById('login-password').value;
+            
+            fetch('login.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    window.location.href = "test_homepage.html";
+                }
+            })
+            .catch(error => alert('Fehler: ' + error));
+        }
+
+        function register() {
+            let email = document.getElementById('register-email').value;
+            let password = document.getElementById('register-password').value;
+            
+            fetch('register.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    window.location.href = `aktivierungsseite.html?email=${encodeURIComponent(email)}`;
+                }
+            })
+            .catch(error => alert('Fehler: ' + error));
+        }
+
+        function showRegister() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
