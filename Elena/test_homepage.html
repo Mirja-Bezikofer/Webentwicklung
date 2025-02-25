@@ -14,14 +14,17 @@
     <div class="container">
         <h1>Willkommen auf deiner Homepage!</h1>
         <p>Du bist erfolgreich eingeloggt.</p>
+        <!-- Button, der die logout() Funktion aufruft, um den Benutzer abzumelden -->
         <button onclick="logout()">Logout</button>
     </div>
     
     <script>
+        // Funktion, die den Login-Status des Benutzers überprüft
         function checkLoginStatus() {
             fetch('session_check.php')
-                .then(response => response.json())
+                .then(response => response.json()) // Antwort als JSON verarbeiten
                 .then(data => {
+                    // Wenn der Benutzer nicht eingeloggt ist, wird er zur Login-Seite weitergeleitet
                     if (!data.logged_in) {
                         window.location.href = "login_registrierung.html";
                     }
@@ -29,14 +32,18 @@
                 .catch(error => console.error('Fehler:', error));
         }
         
+        // Funktion zum Abmelden des Benutzers und Weiterleitung zur Login-Seite
         function logout() {
+            // Sendet eine GET-Anfrage an die Datei 'logout.php', um den Benutzer abzumelden
             fetch('logout.php')
                 .then(() => {
+                    // Nach erfolgreichem Logout wird der Benutzer zur Login-Seite weitergeleitet
                     window.location.href = "login_registrierung.html";
                 })
                 .catch(error => console.error('Fehler:', error));
         }
 
+        // Überprüft den Login-Status beim Laden der Seite
         checkLoginStatus();
     </script>
 </body>
