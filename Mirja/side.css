@@ -1,10 +1,20 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
+.sidebarleft{
+    width: 25vw;
+    height: 100vh;
 }
 
-.dropdown-content {
-    position: relative;
-    display: none;
+.menubar{
+    width: 10vw;
+    height: 100vh;
+    background: #0000235c;
 }
 
+.menu {
+    padding: 20px;
+}
+.menu a {
+    display: block;
+    color: #000023;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
