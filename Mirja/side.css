@@ -1,3 +1,10 @@
+.body{
+    background-color: #f9f9f9;
+    color: #000023;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+}
 .sidebarleft{
     width: 25vw;
     height: 100vh;
