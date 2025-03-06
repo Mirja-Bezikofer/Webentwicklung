@@ -1,0 +1,105 @@
+body {
+    background-color: #f9f9f9;
+    color: #000023;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+}
+.sidebarleft{
+    width: 25vw;
+    height: 100vh;
+}
+
+.menubar{
+    width: 10vw;
+    height: 100vh;
+    background: #0000235c;
+}
+
+.menu {
+    padding: 20px;
+}
+.menu a {
+    display: block;
+    color: #000023;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.content {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.videoside{
+    width: 3vw;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+.videobuttons{
+    padding-bottom: 1vh;
+    align-items: center;
+    cursor: pointer
+}
+
+.video-container {
+    height: 100vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebarright{
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.commentbar{
+    border-radius: 10px;
+    height: 100vh;
+    width: 20vw;
+    background: whitesmoke;
+}
+.slidebuttons{
+    width: 5vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+.greybuttons{
+    background-color: #cccccc;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.greybuttons:hover{
+    background-color: #adadad;
+}
+
+
+.arrows{
+    height: 40px;
+    width: 40px;
+}
+.comments {
+    padding: 10px;
+}
+.comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    background: rgb(226, 221, 221);
+    border-radius: 5px;
+}
