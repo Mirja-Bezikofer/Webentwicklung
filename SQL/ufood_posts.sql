@@ -26,7 +26,7 @@ CREATE TABLE `posts` (
   `idPosts` int(11) NOT NULL,
   `GerichtName` varchar(45) DEFAULT NULL,
   `Users_Benutzername` varchar(40) DEFAULT NULL,
-  'Post_Meldungen' int(11) DEFAULT 0,
+  `Post_Meldungen` int(11) DEFAULT 0,
   PRIMARY KEY (`idPosts`),
   KEY `Users_Benutzername_idx` (`Users_Benutzername`),
   CONSTRAINT `Users_Benutzername` FOREIGN KEY (`Users_Benutzername`) REFERENCES `users` (`Benutzername`) ON DELETE NO ACTION ON UPDATE NO ACTION
