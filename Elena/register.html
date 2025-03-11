@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrierung</title>
+    <link rel="stylesheet" href="style_login.css">
+    <script> //keine extra js Datei, weil nur eine Funktion mit ein paar If Abfragen nötig ist
+        function validateForm() {
+            //Eingabewerte auslesen
+            var vorname = document.getElementById("name").value;
+            var nachname = document.getElementById("nachname").value;
+            var email = document.getElementById("email").value;
+            var passwort = document.getElementById("passwort").value;
+            
+            //Vorname-Feld leer?
+            if (vorname === "") {
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte gebe deinen Vornamen ein!");
+                return false; 
+            }
+            
+            //Nachname-Feld leer?
+            if (nachname === "") {
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte gebe deinen Nachnamen ein!");
+                return false;
+            }
+            
+            //E-Mail-Feld leer?
+            if (email === "") {
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte eine E-Mail-Adresse eingeben!");
+                return false; 
+            }
+            
+            //E-Mail ein @ und einen Punkt?
+            if (!email.includes("@") || !email.includes(".")) {
+                //Wenn nein, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte eine gültige E-Mail-Adresse eingeben!");
+                return false;
+            }
+            
+            //Passwort-Feld leer?
+            if (passwort === "") {
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte ein Passwort eingeben!");
+                return false;
+            }
+            
+            return true;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            //Füge einen Event-Listener für das Submit-Event des Formulars hinzu
+            document.querySelector("form").addEventListener("submit", function(event) {
+                //Rufe die Validierungsfunktion auf und prüfe das Ergebnis
+                if (!validateForm()) {
+                    //Wenn die Validierung fehlschlägt, verhindere das Standardverhalten (Absenden)
+                    event.preventDefault(); 
+                }
+                //Wenn die Validierung erfolgreich ist, wird das Formular normal abgesendet
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Hauptcontainer für die gesamte Seite -->
+    <div class="container">
+        <div class="forms-container">
+            <div class="form-container">
+                <div class="header">
+                    <h1>Konto erstellen</h1> <!-- Hauptüberschrift -->
+                    <p>Bitte fülle das Formular aus, um dich zu registrieren</p> <!-- Beschreibungstext -->
+                </div>
+                <div class="pad">
+                </div>
+                <form action="register.php" method="post">
+                    <div class="form-row">
+                        <!-- Eingabefeld Vorname-->
+                        <div class="form-group">
+                            <label for="name">Vorname</label>
+                            <div class="input-with-icon">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <input type="text" id="name" name="name" placeholder="Ihr Vorname">
+                            </div>
+                        </div>
+                        <!-- Eingabefeld Nachname-->
+                        <div class="form-group">
+                            <label for="nachname">Nachname</label>
+                            <div class="input-with-icon">
+                                <div class="input-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <input type="text" id="nachname" name="nachname" placeholder="Ihr Nachname">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Eingabefeld Email-->
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <input type="text" id="email" name="email" placeholder="Deine E-Mail-Adresse">
+                        </div>
+                    </div>
+                    <!-- Eingabefeld Passwort-->
+                    <div class="form-group">
+                        <label for="passwort">Passwort</label>
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                            </div>
+                            <input type="password" id="passwort" name="passwort" placeholder="Wähle ein sicheres Passwort">
+                        </div>
+                    </div>
+                    <!-- Absende-Button-->
+                    <button type="submit" class="btn" style="font-weight: bold">Registrieren</button>
+                </form>
+                <!-- Link zur Login-Seite-->
+                <div class="footer">
+                    Du hast bereits ein Konto? <a href="index.html" style="font-weight: bold">Jetzt einloggen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     <!-- responsive Design -->
+    <title>Login & Registrierung</title> 
+    <link rel="stylesheet" href="style_login.css">
+    <script> //keine extra js Datei, weil nur eine Funktion nötig
+        function validateForm() {
+            //Eingabewerte auslesen
+            var email = document.getElementById("loginEmail").value;
+            var passwort = document.getElementById("loginPasswort").value;
+            
+            if (email === "") { //Ist das E-Mail-Feld leer?
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte eine E-Mail-Adresse eingeben!");
+                return false;
+            }
+            
+            if (!email.includes("@") || !email.includes(".")) { //E-Mail mit @ und einem Punkt?
+                //Wenn nein,  Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte eine gültige E-Mail-Adresse eingeben!");
+                return false;
+            }
+            
+            if (passwort === "") { //Passwort-Feld leer?
+                //Wenn leer, Fehlermeldung und Formularabsendung verhindern
+                alert("Bitte ein Passwort eingeben!");
+                return false;
+            }
+            
+            return true;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            //Füge einen Event-Listener für das Submit-Event des Formulars hinzu
+            document.querySelector("form").addEventListener("submit", function(event) {
+                //Rufe die Validierungsfunktion auf und prüfe das Ergebnis
+                if (!validateForm()) {
+                    //Wenn die Validierung fehlschlägt, verhindere das Standardverhalten (Absenden)
+                    event.preventDefault(); 
+                }
+                //Wenn die Validierung erfolgreich ist, wird das Formular normal abgesendet
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Hauptcontainer für die gesamte Seite -->
+    <div class="container"> <!--Style von Container siehe css datei zuweisen -->
+        <div class="forms-container"> <!-- Container für  Login-Formular, Layout in Css Datei-->
+            <div id="loginForm" class="form-container"> <!-- loginformular wird im form container style dargestellt -->
+                <div class="header">
+                    <h1>Willkommen!</h1> <!-- Hauptüberschrift-->
+                    <p>Bitte melde dich mit deinen Zugangsdaten an.</p> <!-- Beschreibungstext-->
+                </div>
+                <div class="pad"> <!-- Block für schöneres Layout-->
+                </div>
+                <form action="login.php" method="post">   <!-- Formular an login.php senden-->
+                    <!-- Eingabefeld Email-->
+                    <div class="form-group"> <!--Div Container mit Style von Form-Group -->
+                        <label for="loginEmail">E-Mail</label> <!-- Eingabefeld einfügen, Eingabe als loginEmail gespeichert-->
+                        <div class="input-with-icon"> <!-- Container für Eingabefeld mit Icon -->
+                            <div class="input-icon"> <!-- Icon Symbol von Mail wird eingefügt, und dann angepasst-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>                                     <!-- Rechteck für den Briefumschlag -->
+                                    <polyline points="22,6 12,13 2,6"></polyline> <!-- Linien von Symbol werden angepasst-->
+                                </svg>
+                            </div>
+                            <input type="text" id="loginEmail" name="email" placeholder="Deine E-Mail-Adresse"> <!-- type="text" statt "email" damit eigene Validierung funktioniert -->
+                                                        <!-- type: Eingabe muss in Email-Format sein; id: Identifikation; name: Variable, die beim Formular senden, genutzt wird; placeholder: anzuzeigender Text-->
+                        </div>
+                    </div>
+                    <!-- Eingabefeld Passwort-->
+                    <div class="form-group">
+                        <label for="loginPasswort">Passwort</label>
+                        <div class="input-with-icon">
+                            <div class="input-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path> <!-- Bügel des Schlosses -->
+                                </svg>
+                            </div>
+                            <input type="password" id="loginPasswort" name="passwort" placeholder="Dein Passwort">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="font-weight:bold">Einloggen</button> <!-- Absende-Button-->
+                </form>
+                <!-- Absendebereich-->
+                <div class="footer">
+                    Noch kein Konto? <a href="register.html" style="font-weight:bold">Jetzt registrieren!</a> <!-- Button mit Verlinkung zur Registrierungsseite-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

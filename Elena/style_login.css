@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #000023;
+    --primary-hover: #00002397;
+    --primary-light: #faf4f4;
+    --text-color: #333;
+    --border-color: #ddd;
+    --navbar-bg-color: var(--primary-hover); /* Hintergrund der Navbar */
+    --profile-edit-text-color: var(--primary-color); /* Farbe für "Profil bearbeiten" */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #0000235c;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg-color);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Anpassung der Sidebar - Logo und uFood nebeneinander */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Abstand zwischen Logo und uFood */
+}
+
+.logo-container .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo-container .ufood {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.exit-icon {
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.exit-icon:hover {
+    color: var(--primary-hover);
+}
+
+/* Form Styling */
+.dashboard-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-hover);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form select {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Sidebar Links */
+.sidebarleft {
+    width: 25vw;
+    height: 100vh;
+}
+
+.menubar {
+    width: 10vw;
+    height: 100vh;
+    background: #0000235c;
+}
+
+.menu {
+    padding: 20px;  /* Anpassung der Abstände */
+}
+
+.menu a {
+    display: block;
+    color: #000023;
+    text-decoration: none;
+    margin-bottom: 10px;  /* Verkleinerung der Abstände zwischen den Links */
+}
+
+/* Anpassung für die "Über uns"-Seite */
+.about-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+.sidebar {
+    display: none;
+}
+
+.main-content {
+    padding: 1rem;
+}
+};
