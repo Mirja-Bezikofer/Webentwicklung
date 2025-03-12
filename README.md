@@ -1,6 +1,6 @@
 # Webentwicklung
 Webentwicklung Gruppenarbeit für Gruppe 6
-Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP in Verbindung mit der MySQL Workbench genutzt
+Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genutzt
 
 Verbindung mit der Datenbank:
 1. Download der neuesten Version von XAMPP
@@ -9,7 +9,7 @@ Verbindung mit der Datenbank:
 4. Datenbank uFoodFinal erstellen
 5. Datenbank-Dump "uFoodFinal.sql" ausführen
 6. Zip-Ordner "uFood" extrahieren und in C:\xampp\htdocs ablegen
-7. Im Brwoser öffnen: Localhost/uFood/
+7. Im Browser öffnen: Localhost/uFood/
 
 Funktionenübersicht:
 1. Suchfunktion: Alexandra Paparodopoulos
