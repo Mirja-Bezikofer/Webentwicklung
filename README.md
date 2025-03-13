@@ -22,13 +22,18 @@ Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genu
     Die Suche wird entweder per Enter-Taste oder durch Klicken auf den Suchen-Button ausgelöst.
     3. Ergebnisse anzeigen
     Die Suchergebnisse werden dynamisch geladen und als Karten dargestellt.
-    Enthalten sind: Gerichtname, User, Tags und ein Vorschaubild (falls vorhanden, sonst Standardbild)
+    Enthalten sind: Gerichtname, User, Tags und ein Vorschaubild (falls vorhanden, sonst Standardbild).
     4. Beitrag aufrufen
     Durch Klicken auf ein Suchergebnis wird die ForYou-Seite mit dem gewählten Beitrag geöffnet.
     
 **II. Hochladen: Mirja Bezikofer**
     🔄 Verwendung:
-      1.
+      1. Hochladen öffnen
+      Die Datei Hochladen.php muss im Browser geöffnet werden.
+      2. Formular ausfüllen
+      Eingabefelder: Video hochladen, Gerichtname (optional), Tags (optional), Vorschaubild (optional).
+      3. Post hochladen
+      Die Datei wird verarbeitet und in der Datenbank gespeichert.
 
 **III. ForYou Page: Marvin Dörry**
     🔄 Verwendung:
