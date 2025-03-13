@@ -29,11 +29,13 @@ Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genu
 **II. Hochladen: Mirja Bezikofer**
     🔄 Verwendung:
       1.
+
 **III. ForYou Page: Marvin Dörry**
     🔄 Verwendung:
       1.
     ❌ Problem: Kein Algorhithmus wie im ACD geplant umgesetzt.
         Lösung: Anfangs wird zufälliges Video geladen, danach die Datenbank durchgegangen
+        
 **IV. Profil / Login / Über uns: Elena Starke**
     🔄 Verwendung:
       1. 
