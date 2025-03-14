@@ -43,10 +43,22 @@ Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genu
         
 **IV. Profil / Login / Über uns: Elena Starke**
     🔄 Verwendung:
-      1. 
+      1. Register: localhost/ufood/Dateipfad/Login_Profile_Registrierung/register.html aufrufen
+      Benutzername: tester 	Test-Email: tester@test.de		Passwort: test2
+            a)	Benutzername: tester1 ->Fehlermeldung, weil bereits registriert
+            b)	Mail ohne @ oder. ->Fehlermeldung
+      2. Login: localhost/ufood/Dateipfad/Login_Profile_Registrierung/index.html aufrufen
+      Test-Email: tester@test.de		Passwort: test2
+            a)	Mail ohne @ oder. ->Fehlermeldung
+      3. Profil: localhost/ufood/Dateipfad/profile.php aufrufen
+            a) Neues Passwort1: test3 		Neues Passwort2: test3 
+            b) Neues Passwort1: test 4		Neues Passwort2: test3 Fehlermeldung
+            c) Zum Ausloggen, bitte auf Abmeldebutton klicken 
+      4. Über_uns: localhost/ufood/Dateipfad/über_uns.html aufrufen
+            a) Zum Ausloggen, bitte auf Abmeldebutton klicken
     ❌ Problem: Es wird keine Bestätigungsmail verschickt.
         Ursache: Kein funktionierender E-Mail-Server
-        Kurzfristige Lösung: Eine Aktivierungsseite (activation.html) für eine manuelle Bestätigung durch den Benutzer wurde                               erstellt.
-        Langfristige Lösung: Ein funktionierender E-Mail-Server sollte eingerichtet werden, um Bestätigungsmails automatisch                               zu versenden und die Benutzerregistrierung zu vollenden.
+        Kurzfristige Lösung: Eine Aktivierungsseite (activation.html) für eine manuelle Bestätigung durch den Benutzer wurde erstellt.
+        Langfristige Lösung: Ein funktionierender E-Mail-Server sollte eingerichtet werden, um Bestätigungsmails automatischh zu versenden und die Benutzerregistrierung zu vollenden.
 
         
