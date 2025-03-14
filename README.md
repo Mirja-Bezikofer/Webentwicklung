@@ -1,6 +1,12 @@
 # Webentwicklung
 Webentwicklung Gruppenarbeit für Gruppe 6
-Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genutzt.
+
+## 📌Anpassungen ACD:
+- Für die Entwicklung wurde XAMPP anstatt der im ACD beschriebenen ABS Cloud genutzt
+- Es wurde ein monolithisches System anstatt einer Microservices-Architektur umgesetzt
+- Empfehlungsalgorithmus zur Analyse des Nutzungsverhalten nicht umgesetzt. Auf der ForYou-Page werden zufällige Videos geladen, danach wird die Datenbank durchgegangen
+- Es wurden keine Monetarisierungskonzepte umgesetzt
+- In der aktuellen Umsetzung fehlen Datenverschlüsselungen und spezifische Maßnahmen zum Schutz von Nutzerdaten (DSGVO-Konformität)
 
 ## 🛠️Verbindung mit der Datenbank:
 1. Download der neuesten Version von XAMPP
@@ -38,8 +44,6 @@ Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genu
 **III. ForYou Page: Marvin Dörry**
     🔄 Verwendung:
       1.
-    ❌ Problem: Kein Algorhithmus wie im ACD geplant umgesetzt.
-        Lösung: Anfangs wird zufälliges Video geladen, danach die Datenbank durchgegangen
         
 **IV. Profil / Login / Über uns: Elena Starke**
     🔄 Verwendung:
@@ -59,6 +63,6 @@ Für die Entwicklung wurde anstatt der im ACD beschriebenen ABS Cloud XAMPP genu
     ❌ Problem: Es wird keine Bestätigungsmail verschickt.
         Ursache: Kein funktionierender E-Mail-Server
         Kurzfristige Lösung: Eine Aktivierungsseite (activation.html) für eine manuelle Bestätigung durch den Benutzer wurde erstellt.
-        Langfristige Lösung: Ein funktionierender E-Mail-Server sollte eingerichtet werden, um Bestätigungsmails automatischh zu versenden und die Benutzerregistrierung zu vollenden.
+        Langfristige Lösung: Ein funktionierender E-Mail-Server sollte eingerichtet werden, um Bestätigungsmails automatischh zu versenden und die Benutzerregistrierung zu                                vollenden.
 
         
